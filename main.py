@@ -1,6 +1,15 @@
 from PIL import Image
+from entities import User
 
-                                              #image_list = []
+is_logged_out = True
+while is_logged_out:
+    user_name = input("enter your username please: ")
+    password = input("enter your password please: ")
+    if User.users_dict.get(user_name) != None:
+        if User.users_dict[user_name] == password:
+            is_logged_out = False
+
+
 file_name =input("enter file path to image here: ")
 img_obj = Image.open(file_name)
 pixel_map = img_obj.load()
@@ -13,5 +22,4 @@ for i in range(length):
 
 
 img_obj.save("output", format="png")
-                                                #image_list.append(file_name)
-                                                #print(image_list[0])
+                                        
