@@ -3,12 +3,13 @@ from entities import User
 
 is_logged_out = True
 while is_logged_out:
-    user_name = input("enter your username please: ")
-    password = input("enter your password please: ")
-    if User.users_dict.get(user_name) != None:
-        if User.users_dict[user_name] == password:
-            is_logged_out = False
-
+    print("to sign up enter 1")
+    print("to login enter 2")
+    option = input()
+    if option == "1":
+        signup()
+    elif option = "2":
+        login()
 
 file_name =input("enter file path to image here: ")
 img_obj = Image.open(file_name)
@@ -22,4 +23,16 @@ for i in range(length):
 
 
 img_obj.save("output", format="png")
-                                        
+
+def login():
+    user_name = input("enter your username please: ")
+    password = input("enter your password please: ")
+    if User.users_dict.get(user_name) != None:
+        if User.users_dict[user_name] == password:
+            is_logged_out = False
+
+def signup():
+    user_name = input("enter your username please: ")
+    email = input("enter your email please: ")
+    password = input("enter your password please: ")
+    user = new User(user_name, email, password)
