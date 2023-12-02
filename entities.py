@@ -5,3 +5,7 @@ class User:
         self.email = email
         self.password = password
         self.files_list = []
+
+
+class app_image:
+    def __init__(self, file_location)
