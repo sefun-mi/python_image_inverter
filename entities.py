@@ -8,4 +8,6 @@ class User:
 
 
 class app_image:
-    def __init__(self, file_location)
+    file_location
+    def __init__(self, file_location):
+        self.file_location = file_location

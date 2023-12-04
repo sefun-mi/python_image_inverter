@@ -2,6 +2,7 @@ from PIL import Image
 from entities import User
 
 is_logged_out = True
+user = None
 while is_logged_out:
     print("to sign up enter 1")
     print("to login enter 2")
@@ -9,7 +10,7 @@ while is_logged_out:
     if option == "1":
         signup()
     elif option = "2":
-        login()
+        user = login()
 
 file_name =input("enter file path to image here: ")
 img_obj = Image.open(file_name)
@@ -23,6 +24,7 @@ for i in range(length):
 
 
 img_obj.save("output", format="png")
+user.files_list.add(new app_image(file_name))
 
 def login():
     user_name = input("enter your username please: ")
@@ -30,6 +32,7 @@ def login():
     if User.users_dict.get(user_name) != None:
         if User.users_dict[user_name] == password:
             is_logged_out = False
+    return User.users_dict[user_name]       
 
 def signup():
     user_name = input("enter your username please: ")
